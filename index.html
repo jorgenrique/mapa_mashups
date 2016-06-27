@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Documento sin título</title>
+	<!-- KEY DE ALE -->
+	<!-- <script src="https://maps.google.com/maps/api/js?libraries=geometry&v=3.21&key=AIzaSyBsrAfRmkmmwwBnm4BhNHndDwIfddLFn_0"></script> -->
+	<!-- KEY DE JORGE -->
+	<script src="https://maps.google.com/maps/api/js?libraries=geometry&v=3.21&key=AIzaSyCUTANeBB5-0t6pbet5kHzbxbRB22mzMTE"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/maplace.js"></script>
+    <script type="text/javascript">
+	var Circles = [
+		{
+			lat: 52.51206795456051,
+			lon: -1.4278557944336345,
+			title: 'Inglaterra',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 160000
+			},
+			stroke_options: {
+				strokeColor: '#aaaa00',
+				fillColor: '#4ebee6'
+			},
+			draggable: true
+		},
+		{
+			lat: 56.93525832261877,
+			lon: -3.8338616538086345,
+			title: 'Escocia',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 200000
+			},
+			stroke_options: {
+				fillColor: '#4ebee6'
+			}
+		},
+		{
+			lat: 53.19536386149823,
+			lon: -7.7340081381836345,
+			title: 'Irlanda',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 160000
+			},
+			stroke_options: {
+				fillColor: '#104c86'
+			}
+		},
+		{
+			lat: 40.21939437563838,
+			lon: -1.9826653647461345,
+			title: 'Espana',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 360000
+			},
+			stroke_options: {
+				fillColor: '#4ebee6'
+			}
+		},
+		{
+			lat: 39.08597670172054,
+			lon: -9.277587239746135,
+			title: 'Portugal',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 120000
+			},
+			stroke_options: {
+				fillColor: '#4ebee6'
+			}
+		},
+		{
+			lat: 47.12119650909843,
+			lon: 4.8508307290038655,
+			title: 'Francia',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 420000
+			},
+			stroke_options: {
+				fillColor: '#104c86'
+			}
+		},
+		{
+			lat: 56.101634816546955,
+			lon: 9.355225260253865,
+			title: 'Dinamarca',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 120000
+			},
+			stroke_options: {
+				fillColor: '#4ebee6'
+			}
+		},
+		{
+			lat: 52.192987239861445,
+			lon: 11.464600260253865,
+			title: 'Alemania',
+			html: [
+            	'<img src="https://unsplash.it/200/?random">'
+        	].join(''),
+			circle_options: {
+				radius: 200000
+			},
+			stroke_options: {
+				fillColor: '#104c86'
+			}
+		},
+	];
+		$(function() {
+			new Maplace({
+			locations: Circles,
+			map_div: '#gmap-circles',
+			start: 0,
+			show_markers: false,
+			type: 'circle',
+			controls_on_map: false,
+			shared: {
+				zoom: 4,
+				html: '%index'
+			},
+			styles: {
+				'Night': [
+					{
+						featureType: 'all',
+						elementType: 'all',
+						stylers: [
+							{
+								visibility: 'off'
+							}
+						]
+					},
+					{
+						featureType: 'water',
+						elementType: 'all',
+						stylers: [
+							{
+								visibility: 'on'
+							},
+							{
+								lightness: '100'
+							}
+						]
+					}
+				]
+
+			}
+		}).Load();
+		});
+	</script>
+	<style>
+		/**{
+			padding:0;
+			margin:0;
+		}*/
+	</style>
+</head>
+
+<body>
+<div id="gmap-circles"  style="width:100vw;height:100vw;"></div>
+<div id="controls"></div>
+</body>
+</html>
